@@ -6,4 +6,4 @@ RUN tar -zxvf frp_0.27.0_linux_amd64.tar.gz
 FROM alpine as final
 COPY --from=build /tmp/frp_0.27.0_linux_amd64/frpc /usr/bin
 COPY --from=build /tmp/frp_0.27.0_linux_amd64/frpc.ini /etc/frpc/frpc.ini
-ENTRYPOINT [ "frpc","-c","/etc/frpc/frps.ini" ]
+ENTRYPOINT [ "frpc","-c","/etc/frpc/frpc.ini" ]
